@@ -10,3 +10,11 @@ resource "aws_instance" "demo-ec2" {
       Name = "TerraformDemo"
     }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "cloudops-terraform-state-prod"
+    key    = "cloudops"
+    region = "us-west-2"
+  }
+}
